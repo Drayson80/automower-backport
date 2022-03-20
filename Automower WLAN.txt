@@ -1,0 +1,11 @@
+
+https://www.mikrocontroller.net/topic/304526
+https://gitlab.com/nbrgmn/wall-e-esp8266-automower/activity
+
+https://github.com/danielzmod/automower
+
+Automower 220AC und 230ACX sind beide G2
+
+230ACX ist schneller/mäht mehr je Akkuladung
+
+WLAN Einbindung über Diagnosestecker möglich
