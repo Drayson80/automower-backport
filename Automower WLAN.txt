@@ -9,3 +9,11 @@ Automower 220AC und 230ACX sind beide G2
 230ACX ist schneller/mäht mehr je Akkuladung
 
 WLAN Einbindung über Diagnosestecker möglich
+
+https://forum.creationx.de/forum/index.php?thread/2877-integration-husquarna-automower-g2-mit-tasmota-in-fhem/
+
+
+In diesem alten Thread gibt es Diskussionen zum ACX2xx, der hatte noch 
+einen Diagnoseport auf UART Basis. Ist ein recht umfangreicher Thread, 
+vielleicht gibt es Parallelen zum neuen AM
+http://www.roboternetz.de/community/threads/1330-AutoMower-von-Elektrolux-und-Husqvarna/page8?highlight=Automower

@@ -1,0 +1,93 @@
+Es sieht so aus, als hätte ich mich geirrt. Das habe ich gefunden, ein
+Lauschprotokoll eines zweiten Rechners betreffend die Kommunikation PC
+<-> Automower. Vielleicht würde es sich lohnen, das auch einmal zu
+probieren...
+Wenn ich mir da so die Return-Variablen ansehe :)))
+
+
+Zeile Menue
+74 5.1.1.1 Fahren Mähen Betriebsdaten
+82 Mähen Mähen Betriebsdaten
+90 Suchen Mähen Betriebsdaten
+138 Fehler Mähen Betriebsdaten
+122 Ladung Ladung
+170 Ladung-OK Ladung
+162 Andockversuche Ladung
+166 Hinderniss Ladung
+130 Timermodus Ladung
+174 Abgebrochen Ladung
+142 Fehler-Zeit Mähen Tageszähler
+
+247 Installationsschloss Sicherheit 0,1
+250 Zeitschloss Stunden
+254 Stopp-Alarm Sicherheit 0,1
+256 Einstellungsschutz Sicherheit 0,1
+272 Zeitschloss Stunden
+1402 Suchzeiten Betriebsdaten
+1406 Suchzeiten Betriebsdaten
+1442 Suchzeiten Betriebsdaten
+
+
+Automower G2 Variablen
+
+76 Average calculating number [0-9]
+77 Added cutting power
+87 Different between left & right [pulses]
+311 Long average blade motor currency [??]
+312 1 if average calculating is ready
+403 Pulses from left motor (inc. if forward)
+404 Pulses from left motor (inc. if forward)
+409 Power right
+410 Power left
+413 Length left motor (inc. if forward) [pulses]
+415 Left wheel direction: 1=forward
+416 1 if right wheel will go forward
+417 1 if forward right wheel
+418 1 if left wheel rotate forward
+419 Length past wire [pulses]
+424 Loop sensor (front&rear) A0
+425 Loop sensor A1
+426 Loop sensor N7
+427 Loop sensor F9
+441 Loop Quality signal (max 500)
+442 Loop sensor average F9
+458 Loop sensor Average (A0)
+475 Front loop sensor A0
+476 Rear loop sensor A0
+491 Current [mA]
+492 Charging time [min]
+495 Charging battery amount [mAh]
+496 Charging amount left when starting search [mAh]
+497 Statuscode
+556 Cutting speed [time/puls]
+557 Blade motor currency consumption [??]
+563 Battery temp. [°C]
+564 Time since charging [min]
+565 Latest temp. (when charging) [°C]
+566 Time to next temp. measure [Sec]
+569 Charging number [1-10]
+579 Reference wheel speed
+592 X angle [??]
+599 Up side down [??]
+624 Blade motor status
+637 Return fast
+644 1 if more then 30 pulses outside wire (A0)
+645 Time mower inside wire (A0) max 100 [ms]
+653 Return run without wire
+654 Return fast complex
+655 Return fast platanos
+656 Return wheel
+669 Missing puls signal (0 if no error)
+4748 Collision sensor[A/D]
+4749 Lift sensors [A/D]
+4750 Blade motor current [A/D]
+4751 Current left [??]
+4752 Current right [??]
+4812 Stop button [A/D]
+7419 Length past wire [cm]
+9407 Speed right
+9408 Speed left
+12000 Used battery amount [mAh]
+12010 Blade motor speed [rpm]
+12020 Battery voltage [mV]
+12030 Battery voltage current compensated [mV]
