@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+</html>
+
+
+
+<style>
+body {
+  background-color: #101010;
+  color: white;
+  font-family: sans-serif;
+}
+.content {
+  max-width: 400px;
+  margin: auto;
+  background: #202020;
+  padding: 10px;
+}
+h1 {color: #9AAF7C;}
+p {color: #CCCCCC;}
+input[type=button], input[type=submit], input[type=reset], button {
+  -webkit-appearance: none;
+  background-color: #303031;
+  border: 1px solid #404040;
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+input[type=submit]:hover, button:hover {background-color: #353535;}
+textarea {
+  width: 100%;
+  color: #D2BE84;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #404040;
+  background-color: #303031;
+  resize: none;
+}
+.box {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #404040;
+  background-color: #303031;
+  font-size: 14px;
+}
+.log {
+  height: 180px;
+  overflow-y: scroll;
+}
+.logDate {
+  color: #0892AF;
+  font-size: 10px;
+}
+.logMsg {
+  color: #D2BE84;
+  font-size: 11px;
+}
+table.status {
+  border-collapse: collapse;
+  width:100%;
+  color: #B99466;
+}
+table.status th, table.status td {
+  border-bottom: 1px solid #404040;
+  padding: 6px 6px 4px 0px;
+}
+table.status tr:hover {background-color: #353535;}
+table.status td:first-child {text-align:left;  width: 115px; padding-left: 2px;}
+table.status td:nth-child(2) {color:#9AAF7C; }
+table.battery {
+  border-collapse: collapse;
+  width:100%;
+  color: #B99466;
+  text-align:center;
+}
+table.battery th {
+  border-bottom: 1px solid #404040;
+  text-align:center;
+  font-weight: normal;
+}
+table.battery tr:hover {background-color: #353535;}
+table.battery tr:first-child {background-color: #353535;}
+table.battery tr:nth-child(2) {
+  color:#9AAF7C; 
+}
+.intervalContainer {
+  overflow: auto;
+}
+.interval {
+  color: #0892AF;
+  margin-top: 10px;
+  font-size: 10px;
+  height: 16px;
+  min-height: 16px;
+  float: right;
+}
+</style>
+
+
+<body>
+  <div class='content'>
+    <h1>Alfons</h1>
+    <p>Husquarna Automower G2</p>
+    <form action='/action'>
+      <input type='submit' name='action' value='START' /><br>
+      <input type='submit' name='action' value='STOP' /><br>
+      <br>
+      <input type='submit' name='action' value='HOME' /><br>
+      <input type='submit' name='action' value='MAN' /><br>
+      <input type='submit' name='action' value='AUTO' /><br>
+    </form>
+    <br>
+    Status:<br>
+    <div class='box'>
+      <table class='status'>
+        <tr><td>Status</td><td>%%mower%%</td></tr>
+        <tr><td>Cover</td><td>%%cover%%</td></tr>
+        <tr><td>Time</td><td>%%time%%</td></tr>
+        <tr><td>Date</td><td>%%date%%</td></tr>
+        <tr><td>IP</td><td>%%ip%%</td></tr>
+        <tr><td>Wifi RSSI</td><td>%%rssi%% dB</td></tr>
+      </table>
+    </div>
+    <br>
+    Timer:<br>
+    <div class='box'>
+      <table class='status'>
+        <tr><td>Next start</td><td>%%nextstart%%</td></tr>
+        <tr><td>Timer1</td><td>%%timer1%%</td></tr>
+        <tr><td>Timer2</td><td>%%timer2%%</td></tr>
+        <tr><td>Working days</td><td>%%workingdays%%</td></tr>
+      </table>
+    </div>
+    <br>
+    Battery:<br>
+    <div class='box'>
+      <table class='battery'>
+        <tr><th>Volt</th><th>mAh</th><th>mA</th><th>&deg;C</th></tr>
+        <tr><td>%%batteryvoltage%%</td><td>%%batterycapacity%%</td><td>%%flowingcurrent%%</td><td>%%temperature%%</td></tr>
+      </table>
+    </div>
+    <br>
+    <button onClick='window.location.reload();'>refresh</button>
+    <br>
+    <br>
+    Log:<br>
+    <div class='box log'>" + logcontent + "</div>
+    <div class='intervalContainer'><div class='interval'>"+settings+"</div></div>  
+  </div>
+</body>
+}
+
+<body>
+  <div class='content'>  
+    <h1>Alfons</h1>
+    <p>Husquarna Automower G2</p>
+    <br>
+    Requests:<br>
+    <div class='box'>
+      <table class='status'>
+        <tr><td>Web interface</td><td>http://"+hostName+".local/web</td></tr>
+        <tr><td>Json output </td><td>http://"+hostName+".local/json</td></tr>  
+        <tr><td>Send hex command</td></td><td>http://"+hostName+".local/send?cmd=A0-B1-C2-D3-E4</td></tr>
+        <tr><td>Send command by name</td><td>http://"+hostName+".local/send?name=HOME</td></tr>
+        <tr><td>Wifi strength</td><td>http://"+hostName+".local/rssi</td></tr>
+        <tr><td>Program version</td><td>http://"+hostName+".local/prgver</td></tr>
+        <tr><td>Webupdater</td><td>http://"+hostName+".local/update</td></tr>  
+      </table>
+    </div>
+    <br>
+    Names:<br>
+    <div class='box'>
+      Pre-defined commands for the mower
+      <table class='status'>
+        <tr><td>START</td><td>Starts the mower, when stopped.</td></tr>
+        <tr><td>STOP</td><td>Stops the mower while mowing.</td></tr>
+        <tr><td>HOME</td><td>Sends the mower to the charging station.</td></tr>
+        <tr><td>MAN</td><td>The mower starts when it is out on the lawn, it will mow until the battery runs out.</td></tr>
+        <tr><td>AUTO</td><td>The standard, automatic operation mode where the mower mows and charges automatically.</td></tr>
+        <tr><td>STATUS</td><td>Retrieves the status of the mower like parked, charging, mowing, searching or error.</td></tr>  
+        <tr><td>COVER</td><td>Retrieves the status of the cover, whether open or closed.</td></tr>
+        <tr><td>BATTERY</td><td>Retrieves battery information like voltage, capacity or flowing current.</td></tr>
+        <tr><td>CLOCK</td><td>Retrieves the current time.</td></tr>
+        <tr><td>DATE</td><td>Retrieves the current date.</td></tr>
+        <tr><td>TIMER1START</td><td>Retrieves the start time of Timer1</td></tr>
+        <tr><td>TIMER1STOP</td><td>Retrieves the stop time of Timer1</td></tr>
+        <tr><td>TIMER2START</td><td>Retrieves the start time of Timer2</td></tr>
+        <tr><td>TIMER2STOP</td><td>Retrieves the stop time of Timer2</td></tr>
+        <tr><td>NEXT</td><td>Retrieves the date and time of next start.</td></tr>
+      </table>
+    </div>
+  </div>  
+</body>
